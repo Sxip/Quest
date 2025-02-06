@@ -1,0 +1,625 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{326B7AB3-BA39-457C-B830-A7B73C33509A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Library</RootNamespace>
+    <AssemblyName>Library</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony, Version=2.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lib.Harmony.2.3.3\lib\net48\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Accessibility">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Accessibility.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="BoundaryBuilder">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\BoundaryBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="DynamicData, Version=8.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicData.8.4.1\lib\net462\DynamicData.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Unity">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Facebook.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Unity.Settings">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Facebook.Unity.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Unity.Windows">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Facebook.Unity.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Analytics">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Firebase.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.App">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Firebase.App.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.DynamicLinks">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Firebase.DynamicLinks.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Messaging">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Firebase.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Platform">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Firebase.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.RemoteConfig">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Firebase.RemoteConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.TaskExtension">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Firebase.TaskExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.MiniJson">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Google.MiniJson.dll</HintPath>
+    </Reference>
+    <Reference Include="LibFBGManaged">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\LibFBGManaged.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroCom.Runtime, Version=0.11.0.0, Culture=neutral, PublicKeyToken=b30be05a5f7688e9, processorArchitecture=MSIL">
+      <HintPath>..\packages\MicroCom.Runtime.0.11.0\lib\netstandard2.0\MicroCom.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Posix">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Mono.Posix.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.WebBrowser">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Mono.WebBrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="netstandard">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\netstandard.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Purchasing.Common">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Purchasing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat, Version=15.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Splat.15.1.1\lib\netstandard2.0\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="Stat Curves">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Stat Curves.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\System.ComponentModel.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\System.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\System.Data.DataSetExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\System.EnterpriseServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\System.IO.Compression.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.8.0.0\lib\net462\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive, Version=6.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.6.0.1\lib\net472\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\System.Runtime.Serialization.Formatters.Soap.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\System.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Internals">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\System.ServiceModel.Internals.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.8.0.3\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.8.0.0\lib\net462\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\System.Transactions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\System.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Tmds.DBus.Protocol, Version=0.20.0.0, Culture=neutral, PublicKeyToken=9abd76e9812c1bca, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tmds.DBus.Protocol.0.20.0\lib\netstandard2.0\Tmds.DBus.Protocol.dll</HintPath>
+    </Reference>
+    <Reference Include="UDP">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UDP.dll</HintPath>
+    </Reference>
+    <Reference Include="UniPasteBoardPlugin">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UniPasteBoardPlugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.Analytics.DataPrivacy.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.Analytics.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Tracker">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.Services.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Analytics">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.Services.Core.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Configuration">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.Services.Core.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Device">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.Services.Core.Device.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Environments">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.Services.Core.Environments.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Environments.Internal">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.Services.Core.Environments.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Internal">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.Services.Core.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Networking">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.Services.Core.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Registration">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.Services.Core.Registration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Scheduler">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.Services.Core.Scheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Telemetry">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.Services.Core.Telemetry.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Threading">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.Services.Core.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.AccessibilityModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.AndroidJNIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.ARModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.ClusterRendererModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CrashLog">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.CrashLog.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.CrashReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DSPGraphModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.DSPGraphModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.GameCenterModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GIModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.GIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.GridModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.HotReloadModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.LocalizationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.NVIDIAModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.NVIDIAModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.PerformanceReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.ProfilerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing.AppleCore">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.Purchasing.AppleCore.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing.AppleMacosStub">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.Purchasing.AppleMacosStub.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing.AppleStub">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.Purchasing.AppleStub.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing.Codeless">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.Purchasing.Codeless.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing.SecurityCore">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.Purchasing.SecurityCore.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing.SecurityStub">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.Purchasing.SecurityStub.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing.Stores">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.Purchasing.Stores.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing.WinRTCore">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.Purchasing.WinRTCore.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing.WinRTStub">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.Purchasing.WinRTStub.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.SpriteMaskModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.SpriteShapeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.StreamingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.SubstanceModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubsystemsModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.SubsystemsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreFontEngineModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreTextEngineModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.TLSModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsNativeModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.UIElementsNativeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.UmbraModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.UNETModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityCurlModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.UnityCurlModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.VFXModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VirtualTexturingModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.VirtualTexturingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.WindModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XR.LegacyInputHelpers">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UniWebView-CSharp">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\UniWebView-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\websocket-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="XInputDotNetPure">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\AdventureQuest3D\aq3d\AQ3D_Data\Managed\XInputDotNetPure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstractions\ManagerContract.cs" />
+    <Compile Include="Cheat\Abstractions\CheatContract.cs" />
+    <Compile Include="Cheat\Attributes\CheatAttribute.cs" />
+    <Compile Include="Cheat\CheatManager.cs" />
+    <Compile Include="Cheat\Cheats\FlyCheat.cs" />
+    <Compile Include="Cheat\Cheats\JumpHeightCheat.cs" />
+    <Compile Include="Cheat\Patches\Patch.cs" />
+    <Compile Include="Game\Objects\Player\Patches\Patches.cs" />
+    <Compile Include="Game\Objects\Player\Player.cs" />
+    <Compile Include="Interface\Attributes\InterfaceMenuItemAttribute.cs" />
+    <Compile Include="Interface\Attributes\MenuItemClickedAttribute.cs" />
+    <Compile Include="Interface\InterfaceManager.cs" />
+    <Compile Include="Interface\UI\Root.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\UI\Root.Designer.cs" />
+    <Compile Include="Message\Attributes\CommandAttribute.cs" />
+    <Compile Include="Message\Commands\BankCommand.cs" />
+    <Compile Include="Message\Commands\DeveloperModeCommand.cs" />
+    <Compile Include="Message\Commands\FlyCommand.cs" />
+    <Compile Include="Message\Commands\HelpCommand.cs" />
+    <Compile Include="Message\Commands\JumpHeightCommand.cs" />
+    <Compile Include="Message\Commands\MapCommand.cs" />
+    <Compile Include="Message\Commands\QuestCommand.cs" />
+    <Compile Include="Message\Commands\ShopCommand.cs" />
+    <Compile Include="Message\Commands\SpeedCommand.cs" />
+    <Compile Include="Message\MessageManager.cs" />
+    <Compile Include="Harmony\Attributes\LazyHarmonyAttribute.cs" />
+    <Compile Include="Harmony\HarmonyManager.cs" />
+    <Compile Include="Message\Patches\Patch.cs" />
+    <Compile Include="Mono\Attributes\MonoUpdateAttribute.cs" />
+    <Compile Include="Mono\MonoManager.cs" />
+    <Compile Include="PacketSniffer\PacketSniffer.cs" />
+    <Compile Include="PacketSniffer\PacketSnifferMenuItem.cs" />
+    <Compile Include="PacketSniffer\Patches\Patch.cs" />
+    <Compile Include="PacketSniffer\UI\PacketSnifferInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PacketSniffer\UI\PacketSnifferInterface.Designer.cs" />
+    <Compile Include="PacketSpammer\PacketSpammerMenuItem.cs" />
+    <Compile Include="PacketSpammer\UI\PacketSpammerInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PacketSpammer\UI\PacketSpammerInterface.Designer.cs">
+      <DependentUpon>PacketSpammerInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plugins\Abstractions\QPlugin.cs" />
+    <Compile Include="Plugins\PluginManager.cs" />
+    <Compile Include="Plugins\PluginManagerMenuItem.cs" />
+    <Compile Include="Plugins\UI\PluginManagerInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugins\UI\PluginManagerInterface.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Quest\Bootstrap.cs" />
+    <Compile Include="Quest\Loader.cs" />
+    <Compile Include="Resolver\EmbeddedAssemblyResolver.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\Patches\Patch.cs" />
+    <Compile Include="Utilities\ReflectionsUtility.cs" />
+    <Compile Include="Window\WindowGameAttachment.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Interface\UI\Root.resx" />
+    <EmbeddedResource Include="PacketSniffer\UI\PacketSnifferInterface.resx" />
+    <EmbeddedResource Include="Plugins\UI\PluginManagerInterface.resx" />
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>
