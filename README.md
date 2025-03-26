@@ -1,7 +1,3 @@
-<div align="center">
-  <img src="https://i.imgur.com/wlM8Fq1.png" alt="Jam Logo" width="50%" />
-</div>
-
 Quest is a modular client for developing mods for the game [AdventureQuest 3D](https://aq3d.com).
 
 ## Features
